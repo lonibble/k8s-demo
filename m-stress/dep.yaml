@@ -14,9 +14,8 @@ spec:
     spec:
       containers:
       - name: stress
-        image: staranto/stress:2.1.5
+        image: staranto/stress:2.1.6
         imagePullPolicy: Always
-        command: ["tail", "-f", "/dev/null"]
         ports:
         - containerPort: 8080
           name: http8080
@@ -62,9 +61,9 @@ spec:
   host: ""
   port:
     targetPort: http80
-  tls:
-    insecureEdgeTerminationPolicy: Allow
-    termination: edge
+    #  tls:
+    #    insecureEdgeTerminationPolicy: Allow
+    #    termination: edge
   to:
     kind: Service
     name: stress
